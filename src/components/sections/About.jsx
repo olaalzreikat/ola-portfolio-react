@@ -1,99 +1,81 @@
 import { RevealOnScroll } from "./RevealOnScroll";
 
 export const About = () => {
-  const frontendSkills = [
-    "React",
-    "Vue",
-    "TypeScript",
-    "TailwindCss",
-    "Svelte",
-  ];
-  const backendSkills = ["Node.js", "Python", "AWS", "MongoDB", "GraphQL"];
-
   return (
-    <section
-      id="about"
-      className="min-h-screen flex items-center justify-center py-20"
-    >
+    <section id="about" className="min-h-screen flex items-center justify-center py-24">
       <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from0blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
-            About Me
-          </h2>
-          <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 mb-6">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reprehenderit laborum repudiandae rerum sed nesciunt molestiae
-              neque! Necessitatibus natus quas atque.
+        <div className="max-w-4xl mx-auto px-8">
+
+          {/* Heading */}
+          <h2 className="text-5xl font-bold mb-3 text-center" style={{ color: "#2d1f14" }}>About Me</h2>
+          <p className="text-base text-center mb-16" style={{ color: "#9c8070", fontFamily: "'Caveat', cursive", fontSize: "1.3rem" }}>
+            The story behind the code
+          </p>
+
+          {/* Bio */}
+          <div className="mb-8 p-10 rounded-3xl hover:-translate-y-1 transition-all duration-300"
+            style={{ background: "#f5f0e8", border: "1px solid rgba(194,92,42,0.15)" }}>
+            <h3 className="text-2xl font-bold mb-5" style={{ color: "#2d1f14" }}>My Journey began...</h3>
+            <p className="leading-relaxed mb-4" style={{ color: "#6b5744", fontSize: "1.05rem" }}>
+              I got into software development out of curiosity. I wanted to understand how things on the web actually worked, and that curiosity turned into a passion for building things that are useful, fast, and easy to use.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 hover: -translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4">Frontend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {frontendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500  py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246, 0.2)] transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="rounded-xl p-6 hover: -translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4">Backend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {backendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500  py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246, 0.2)] transition"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <p className="leading-relaxed" style={{ color: "#6b5744", fontSize: "1.05rem" }}>
+              I enjoy working across the stack and am always looking to improve my craft, one project at a time.
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className=" p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> Education </h3>
-              <ul className="list-disc list-inside text-gray-300 space-y-2">
-                <li>
-                  <strong>B.S. in computer science </strong> -XYZ university
-                  (2016-2020)
-                </li>
-                <li>
-                  Relevant coursework: data structures, web development, cloud
-                  computing...
-                </li>
-              </ul>
-            </div>
-            <div className=" p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              {" "}
-              <h3 className="text-xl font-bold mb-4"> Work Experience </h3>
-              <div className="space-y-4 text-gray-300">
+
+          {/* Education + Experience */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            {/* Education */}
+            <div className="p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300"
+              style={{ background: "#f5f0e8", border: "1px solid rgba(194,92,42,0.15)" }}>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#c25c2a" }}>Education</h3>
+
+              <div className="space-y-8">
                 <div>
-                  <h4 className="font-semibold">
-                    software engineer at ABC Corp (2020-present)
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Maxime quas natus ea delectus.
+                  <p className="text-lg font-semibold leading-snug" style={{ color: "#2d1f14" }}>
+                    High School Student at Centennial High School
+                  </p>
+                  <p className="mt-2 leading-relaxed" style={{ color: "#6b5744" }}>
+                    Pursuing rigorous coursework while building real projects and gaining hands-on experience in software development.
                   </p>
                 </div>
-                <div>
-                  <h4 className="font-semibold">
-                    Intern at DEF Startips (2019)
-                  </h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Maxime quas natus ea delectus.
+                <div style={{ borderTop: "1px solid rgba(194,92,42,0.15)", paddingTop: "28px" }}>
+                  <p className="text-lg font-semibold leading-snug" style={{ color: "#2d1f14" }}>
+                    West-MEC Student in Coding Program
+                  </p>
+                  <p className="mt-2 leading-relaxed" style={{ color: "#6b5744" }}>
+                    Earning industry certifications · Building production-level applications · Learning professional development workflows and agile methodologies
                   </p>
                 </div>
               </div>
             </div>
+
+            {/* Experience */}
+            <div className="p-8 rounded-3xl hover:-translate-y-1 transition-all duration-300"
+              style={{ background: "#f5f0e8", border: "1px solid rgba(194,92,42,0.15)" }}>
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-8" style={{ color: "#c25c2a" }}>Experience</h3>
+
+              <div className="space-y-8">
+                <div>
+                  <p className="text-lg font-semibold" style={{ color: "#2d1f14" }}>Littleton Elementary School Volunteer</p>
+                  <p className="text-sm mb-2" style={{ color: "#c25c2a" }}>Educational Technology · 2025</p>
+                  <p className="leading-relaxed" style={{ color: "#6b5744" }}>Built an interactive jigsaw puzzle game about tech pioneers and ran hands-on coding activities for elementary students.</p>
+                </div>
+                <div style={{ borderTop: "1px solid rgba(194,92,42,0.15)", paddingTop: "28px" }}>
+                  <p className="text-lg font-semibold" style={{ color: "#2d1f14" }}>Summer Robotics Volunteer</p>
+                  <p className="text-sm mb-2" style={{ color: "#c25c2a" }}>Glendale, Arizona · June 2025</p>
+                  <p className="leading-relaxed" style={{ color: "#6b5744" }}>Taught middle schoolers programming fundamentals using Scratch to control robots with visual programming blocks.</p>
+                </div>
+                <div style={{ borderTop: "1px solid rgba(194,92,42,0.15)", paddingTop: "28px" }}>
+                  <p className="text-lg font-semibold" style={{ color: "#2d1f14" }}>FBLA Competitive Events</p>
+                  <p className="text-sm mb-2" style={{ color: "#c25c2a" }}>Website Design, Career Portfolio · 2025–2026</p>
+                  <p className="leading-relaxed" style={{ color: "#6b5744" }}>Advanced through regional and state competitions, building complete projects under tight deadlines and presenting to industry judges. Qualifying for nationals.</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </RevealOnScroll>

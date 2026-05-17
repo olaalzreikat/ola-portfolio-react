@@ -1,117 +1,56 @@
 import { RevealOnScroll } from "./RevealOnScroll";
 
+const projects = [
+  {
+    title: "Celestial Garden",
+    description: "A cozy garden game where you plant seeds, watch them grow, and harvest them to unlock new and rare plants.",
+    tech: ["JavaScript", "HTML", "CSS"],
+    link: "https://olaalzreikat.github.io/Capstone/",
+  },
+  {
+    title: "Brick Breaker",
+    description: "A classic arcade game where you bounce a ball to break all the bricks and win.",
+    tech: ["JavaScript", "HTML", "CSS"],
+    link: "https://olaalzreikat.github.io/Brick-Breaker/",
+  },
+  {
+    title: "Equalizer Learning Hub",
+    description: "A student learning platform for math practice and video lessons, built to make learning more accessible.",
+    tech: ["React", "JSX", "CSS"],
+    link: "https://student-learning-hub-kappa.vercel.app/",
+  },
+];
+
 export const Projects = () => {
   return (
-    <section
-      id="projects"
-      className="min-h-screen flex items-center justofy-center py-20"
-    >
+    <section id="projects" className="min-h-screen flex items-center justify-center py-24">
       <RevealOnScroll>
-        <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from0blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            Featured Projects
-          </h2>
-          <div className=" grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246, 0.1)] transition-all ">
-              <h3 className="text-xl font-bold mb-2">Cloud Platform</h3>
-              <p className="text-gray-400 mb-4">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Sapiente, consectetur?
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Node.js", "AWS", "Docker"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-blue-500/10 text-blue-500  py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246, 0.2)] transition"
-                  >
-                    {tech}
-                  </span>
-                ))}
-                <div className="flex justify-between items-center">
-                  <a
-                    href="#"
-                    className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                  >
-                    View Project
-                  </a>
+        <div className="max-w-4xl mx-auto px-8">
+          <h2 className="text-5xl font-bold mb-3 text-center" style={{ color: "#2d1f14" }}>Featured Projects</h2>
+          <p className="text-center mb-16" style={{ color: "#9c8070", fontFamily: "'Caveat', cursive", fontSize: "1.3rem" }}>Things I've built</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projects.map((project, key) => (
+              <div key={key}
+                className="p-10 rounded-3xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                style={{ background: "#f5f0e8", border: "1px solid rgba(194,92,42,0.15)" }}>
+                <h3 className="text-xl font-semibold mb-3" style={{ color: "#2d1f14" }}>{project.title}</h3>
+                <p className="mb-6 leading-relaxed flex-1" style={{ color: "#6b5744", fontSize: "1rem" }}>{project.description}</p>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  {project.tech.map((tech) => (
+                    <span key={tech}
+                      className="py-1.5 px-4 rounded-full text-sm transition-colors duration-200"
+                      style={{ background: "rgba(194,92,42,0.1)", color: "#c25c2a" }}>
+                      {tech}
+                    </span>
+                  ))}
                 </div>
+                <a href={project.link} className="text-sm transition-colors duration-200"
+                  style={{ color: "#c25c2a" }}>
+                  View Project →
+                </a>
               </div>
-            </div>
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246, 0.1)] transition-all ">
-              <h3 className="text-xl font-bold mb-2">Cloud Platform</h3>
-              <p className="text-gray-400 mb-4">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Sapiente, consectetur?
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Node.js", "AWS", "Docker"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-blue-500/10 text-blue-500  py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246, 0.2)] transition"
-                  >
-                    {tech}
-                  </span>
-                ))}
-                <div className="flex justify-between items-center">
-                  <a
-                    href="#"
-                    className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                  >
-                    View Project
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246, 0.1)] transition-all ">
-              <h3 className="text-xl font-bold mb-2">Cloud Platform</h3>
-              <p className="text-gray-400 mb-4">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Sapiente, consectetur?
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Node.js", "AWS", "Docker"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-blue-500/10 text-blue-500  py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246, 0.2)] transition"
-                  >
-                    {tech}
-                  </span>
-                ))}
-                <div className="flex justify-between items-center">
-                  <a
-                    href="#"
-                    className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                  >
-                    View Project
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="p-6 rounded-xl border border-white/10 hover:-translate-y-1 hover:border-blue-500/30 hover:shadow-[0_2px_8px_rgba(59,130,246, 0.1)] transition-all ">
-              <h3 className="text-xl font-bold mb-2">Cloud Platform</h3>
-              <p className="text-gray-400 mb-4">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Sapiente, consectetur?
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {["React", "Node.js", "AWS", "Docker"].map((tech, key) => (
-                  <span
-                    key={key}
-                    className="bg-blue-500/10 text-blue-500  py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 hover:shadow-[0_2px_8px_rgba(59,130,2246, 0.2)] transition"
-                  >
-                    {tech}
-                  </span>
-                ))}
-                <div className="flex justify-between items-center">
-                  <a
-                    href="#"
-                    className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-                  >
-                    View Project
-                  </a>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </RevealOnScroll>

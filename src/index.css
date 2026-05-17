@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@500;700&display=swap');
 @import "tailwindcss";
 
 html,
@@ -5,31 +6,22 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  background: #0a0a0a;
-  color: #f3f4f6;
+  background: #faf7f2;
+  color: #2d1f14;
 }
 
 @layer utilities {
-  @keyframes bink {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
   }
-  .animate-blink{
+  .animate-blink {
     animation: blink 0.8s step-end infinite;
   }
 
   @keyframes loading {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(250%);
-    }
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(250%); }
   }
 
   .animate-loading-bar {
@@ -37,12 +29,12 @@ body {
   }
 }
 
-.reveal{
+.reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.reveal.visible{
+.reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
