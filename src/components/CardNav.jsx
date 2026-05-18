@@ -1,3 +1,5 @@
+// each card holds a section name, suit symbol, which section to navigate to,
+// its rotation angle, and two alternating colors
 export const CardNav = ({ goTo }) => {
   const cards = [
     { label: "About",    suit: "♥", section: "about",    rotate: "-2deg", primary: "#c25c2a", secondary: "#3d2c1e" },
@@ -16,17 +18,18 @@ export const CardNav = ({ goTo }) => {
       </h2>
 
       <div className="relative w-full max-w-5xl">
-        {/* Cards row */}
         <div className="flex items-end justify-between gap-4">
           {cards.map((card, i) => (
             <button
               key={i}
-              onClick={() => goTo(card.section)}
+              onClick={() => goTo(card.section)} // clicking navigates to the section
               onMouseEnter={(e) => {
+                // lift and straighten on hover
                 e.currentTarget.style.transform = "rotate(0deg) translateY(-32px)";
                 e.currentTarget.style.zIndex = "20";
               }}
               onMouseLeave={(e) => {
+                // restore original tilt when mouse leaves
                 e.currentTarget.style.transform = `rotate(${card.rotate})`;
                 e.currentTarget.style.zIndex = "1";
               }}
@@ -35,28 +38,28 @@ export const CardNav = ({ goTo }) => {
                 flex: "1",
                 maxWidth: "220px",
                 height: "300px",
-                background: "#fdf8ec",
+                background: "#fdf8ec", // cream card color
                 border: "1.5px solid #ddd3b8",
                 borderRadius: "18px",
-                transform: `rotate(${card.rotate})`,
+                transform: `rotate(${card.rotate})`, // slight tilt per card
                 transition: "transform 0.3s ease",
                 boxShadow: "4px 8px 24px rgba(0,0,0,0.4)",
                 cursor: "pointer",
               }}
             >
-              {/* Top-left corner */}
+              {/* top left corner showing rank and suit */}
               <div style={{ position: "absolute", top: "12px", left: "14px", textAlign: "left", lineHeight: 1.2 }}>
                 <div style={{ fontFamily: "monospace", fontSize: "16px", fontWeight: "bold", color: card.primary }}>A</div>
                 <div style={{ fontSize: "14px", color: card.primary }}>{card.suit}</div>
               </div>
 
-              {/* Sparkles */}
+              {/* decorative sparkles in the corners */}
               <div style={{ position: "absolute", top: "40px", left: "38px", color: card.primary, fontSize: "14px" }}>✦</div>
               <div style={{ position: "absolute", top: "62px", left: "22px", color: card.primary, fontSize: "8px" }}>✦</div>
               <div style={{ position: "absolute", bottom: "40px", right: "38px", color: card.primary, fontSize: "14px" }}>✦</div>
               <div style={{ position: "absolute", bottom: "62px", right: "22px", color: card.primary, fontSize: "8px" }}>✦</div>
 
-              {/* Center */}
+              {/* center label and suit symbol */}
               <div style={{
                 position: "absolute", inset: 0,
                 display: "flex", flexDirection: "column",
@@ -64,7 +67,7 @@ export const CardNav = ({ goTo }) => {
                 gap: "6px",
               }}>
                 <span style={{
-                  fontFamily: "'Caveat', cursive",
+                  fontFamily: "'Caveat', cursive", // handwritten font
                   fontSize: "2.1rem",
                   fontWeight: 700,
                   color: card.secondary,
@@ -78,7 +81,7 @@ export const CardNav = ({ goTo }) => {
                 </span>
               </div>
 
-              {/* Bottom-right corner (flipped) */}
+              {/* bottom right corner mirroring the top left */}
               <div style={{
                 position: "absolute", bottom: "12px", right: "14px",
                 textAlign: "left", lineHeight: 1.2,
@@ -90,7 +93,7 @@ export const CardNav = ({ goTo }) => {
           ))}
         </div>
 
-        {/* "pick a card" bottom-left */}
+        {/* handwritten prompt below the cards */}
         <p
           className="mt-8 text-left"
           style={{
